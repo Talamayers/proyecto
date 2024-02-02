@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Dental</title>
+    <link rel="stylesheet" href="../css/css.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-letf">
+            <img src="../imagenes/logodentisaludheader-1.svg" alt="" class="diente">
+        </div>
+        <div class="header-right">
+            <a href="https://www.xvideos.com/">
+                <img src="../imagenes/instagram.png" alt="">
+            </a>
+            <a href="https://www.xvideos.com/">
+                <img src="../imagenes/twiter.png" alt="">
+            </a>
+            <a href="https://www.xvideos.com/">
+                <img src="../imagenes/tiktok.png" alt="">
+            </a>
+            <a href="https://www.xvideos.com/">
+                <img src="../imagenes/facebook.png" alt="">
+            </a>
+            <a href="https://www.xvideos.com/">
+                <img src="../imagenes/yotube.png" alt="">
+            </a>
+
+        </div>
+    </header>
+    <nav>
+        <div id="cabeza">
+
+            <ul class="menu">
+                <li><a href="../html/ortodoncia.html">Ortodoncia</a>
+                </li>
+
+                <li><a href="">Agenda tu cita</a>
+
+                </li>
+                <li><a href="biblioteca.html">Ubicacion</a>
+
+                </li>
+                <li><a href="">Blancamiento</a></li>
+                <li><a href="">Rehabilitacion oral</a></li>
+
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="slider-container">
+        <div class="slider">
+            <img src="../imagenes/Frame 4.png" alt="Imagen 1">
+            <img src="../imagenes/Frame 4 (1).png" alt="Imagen 2">
+            <img src="../imagenes/Frame 1.png" alt="Imagen 3">
+        </div>
+    </div>
+
+    <button class="prev-btn" onclick="prevSlide()">&#10094;</button>
+    <button class="next-btn" onclick="nextSlide()">&#10095;</button>
+    <div class="ses2">
+
+        <div class="sub">
+            <h2>Agenda tu cita</h2>
+            <img src="../imagenes/agenda-tu-cita.svg" alt="">
+            <button>Mas informacion</button>
+        </div>
+
+        <div class="sub">
+            <h2>Ubicacion</h2>
+            <img src="../imagenes/clinica-dental.svg" alt="">
+            <button>Mas informacion</button>
+        </div>
+
+        <div class="sub ">
+            <h2>Medios de pago </h2>
+            <img src="../imagenes/medios-de-pago.svg" alt="">
+            <button>Mas informacion</button>
+        </div>
+
+
+    </div>
+
+    <div class="img">
+        <img src="../imagenes/dentisalud-elegir.webp" alt="">
+    </div>
+
+    <aside>
+        <div class="qw">
+            <h1>¿Por qué elegir <span class="azul">DentiSalud</span>?</h1>
+            <p>Contamos con más de 28 años de experiencia atendiendo a más colombianos para mantener su salud oral y su
+                estética dental. Brindamos acceso a un modelo de odontología de calidad con especialistas en cada rama
+                de la odontología, materiales dentales de reconocimiento mundial y tecnología adecuada para mejorar la
+                experiencia durante el tratamiento.</p>
+            <p> <img src="../imagenes/ul-1.webp" alt="">Agenda tu primera cita en nuestra clínica SIN COSTO</p>
+            <p> <img src="../imagenes/ul-2.webp" alt="">Selecciona la forma de pago que más se ajuste a tu bolsillo</p>
+            <p> <img src="../imagenes/ul-3.webp" alt="">Si lo prefieres puedes financiar tu tratamiento y pagarlo en
+                cuotas con una tasa de interés preferencial o, por que no, podrías beneficiarte con un cupo para
+                subvención de intereses al 0%, DentiSalud se hace cargo de eso</p>
+            <p> <img src="../imagenes/ul-4.webp" alt=""> Garantía de Calidad en todos nuestros tratamientos</p>
+            <p> <img src="../imagenes/ul-5.webp" alt=""> Visítanos para entender tu necesidad y con un diagnóstico
+                integral podremos planificar la recuperación y mantenimiento de tu sonrisa</p>
+        </div>
+    </aside>
+
+    <h1 id="h1">Aqui agendas tu cita
+    </h1>
+    <hr>
+    <div class="display">
+        <section class="form-register">
+            <h2>llena tus datos y nosotros te Contactamos</h2>
+    
+            <form action="../php/index.php" method="post">
+                <input class="controls" type="text" name="nombres" id="nombres" placeholder="Nombre">
+    
+                <input class="controls" type="text" name="apellidos" id="apellidos" placeholder="Apellido">
+    
+                <input class="controls" type="email" name="correo" id="email" placeholder="Correo">
+    
+                <input class="controls" type="number" name="numero" id="numero" placeholder="Numero de telefono">
+    
+                <input class="controls" type="text" name="tipoDocumento" id="tipoDocumento" placeholder="Tipo de documento">
+    
+                <input class="controls" type="text" name="numeroDocumento" id="numeroDocumento" placeholder="Numero de documento">
+    
+                <select class="controlss" name="servicioOdontologico">
+                    <option value="opcion1" selected hidden>Servicio odontologico</option>
+                    <option value="Ortodoncia">Ortodoncia</option>
+                    <option value="Implante">Implante</option>
+                    <option value="Diseño de sonrisa">Diseño de sonrisa</option>
+                </select>
+    
+                <select class="controlss" name="ciudadContacto">
+                    <option value="opcion1" selected hidden>Ciudad de Contacto</option>
+                    <option value="Dorada">Dorada</option>
+                    <option value="Barranquilla">Barranquilla</option>
+                    <option value="Manizales">Manizales</option>
+                </select>
+    
+                <select class="controlss" name="horarioAtencion">
+                    <option value="opcion1" selected hidden>Horario de atencion</option>
+                    <option value="7 am - 11 am">7 am - 11 am</option>
+                    <option value="2 pm - 5 pm">2 pm - 5 pm</option>
+                </select>
+    
+                <div class="botones">
+                    <input class="botons" type="submit" value="Enviar formulario">
+                </div>
+            </form>
+        </section>
+    
+        <img src="../imagenes/imagen formularii.png" alt="">
+    </div>
+    
+    <H1 class="Tratamientos">Tratamientos integrales</H1>
+
+    <div class="ses3">
+
+        <div class="sub3">
+            <img src="../imagenes/implantes-dentales.webp" alt="">
+            <h1>Implantes dentales</h1>
+            <div class="div-h4">
+                <h4 class="h4">Una solución práctica y estética para reemplazar piezas dentales. </h4>
+            </div>
+            <button class="ses3-boton">Saber Mas</button>
+        </div>
+
+        <div class="sub3">
+            <img src="../imagenes/ortodoncia.webp" alt="">
+            <h1>Ortodoncia</h1>
+            <div class="div-h4">
+                <h4 class="h4">Contamos con variadas opciones para alinear tu sonrisa.</h4>
+
+            </div>
+            <button class="ses3-boton">Saber Mas</button>
+        </div>
+
+        <div class="sub3">
+            <img src="../imagenes/periodoncia.webp" alt="">
+            <h1>Periodoncia</h1>
+            <div class="div-h4">
+                <h4 class="h4">Porque la prioridad es también la salud de tus encías.</h4>
+
+            </div>
+            <button class="ses3-boton">Saber Mas</button>
+        </div>
+
+        <div class="sub3">
+            <img src="../imagenes/rehabilitacion-oral.webp" alt="">
+            <h1>ortodoncia</h1>
+            <div class="div-h4">
+                <h4 class="h4">Contamos con excelentes especialistas para asegurarte funcionalidad.</h4>
+
+            </div>
+            <button class="ses3-boton">Saber Mas</button>
+        </div>
+
+        <div class="sub3">
+            <img src="../imagenes/endodoncia.webp" alt="">
+            <h1>ortodoncia</h1>
+            <div class="div-h4">
+                <h4 class="h4">Pon en manos expertas la preservación y restauración de tus dientes.</h4>
+
+            </div>
+            <button class="ses3-boton">Saber Mas</button>
+        </div>
+
+
+    </div>
+    <br>
+    <br>
+    <br>
+
+    <section>
+        <div class="img-section">
+            <img src="../imagenes/logodentisaludheader-1.svg" alt="">
+        </div>
+        <div class="div-section">
+            <h1 id="h1-section">Tratamientos dentales y odontología hecha con responsabilidad. Obtén planes de ortodoncia, implantes, diseño de sonrisa, rehabilitación oral y más.</h1>
+        </div>
+        <hr class="hr-section">
+        <footer class="footer">
+            Dentisalud 2024 - Todos los derechos reservados
+        </footer>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="../js/js.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
