@@ -36,6 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (password_verify($contrasena, $row["contrasena"])) {
             echo "Inicio de sesión exitoso. ¡Bienvenido!";
             // Puedes redirigir al usuario a otra página aquí si es necesario
+ 
         } else {
             echo "Contraseña incorrecta. Inténtalo de nuevo.";
         }
