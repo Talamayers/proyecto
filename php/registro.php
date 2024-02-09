@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "El nombre de usuario ya está en uso. Por favor, elige otro.";
     } else {
         // Insertar datos en la tabla de usuarios usando consulta preparada
-        $stmt = $conn->prepare("INSERT INTO usuarios (usuario, contrasena) VALUES (?, ?)");
+        $stmt = $conn->prepare("INSERT INTO usuarios (usuario, contrasena,rol) VALUES (?, ?,1)");
         $stmt->bind_param("ss", $usuario, $contrasena);
 
         if ($stmt->execute()) {
