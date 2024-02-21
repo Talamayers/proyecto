@@ -1,9 +1,9 @@
 <?php
-// Conexión a la base de datos (reemplaza con tus propios detalles)
+
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "formulario";
+$dbname = "prueba1";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -27,29 +27,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $contrasena = validarDatos($_POST["password"]);
 
     // Consultar la base de datos para verificar las credenciales
-    $sql = "SELECT * FROM usuarios WHERE usuario = '$usuario' AND rol=1";
+    $sql = "SELECT * FROM usuarios WHERE usuario = '$usuario'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
         // Usuario encontrado, verificar la contraseña
         $row = $result->fetch_assoc();
-        if (password_verify($contrasena, $row["contrasena"])) {
-            echo "<script> self.location='../html/formulario.html'</script>";
-            echo "Inicio de sesión exitoso. ¡Bienvenido!";
-            echo '<script src="../html/formulario.html" ></script>';
-            // Puedes redirigir al usuario a otra página aquí si es necesario
+        if ($contrasena == $row["contrasena"]) {
+            header("Location: ../html/formulario.html");
+            exit(); // Detener la ejecución del script después de la redirección
+        }
+    }
+          
+
+            
         
         } else {
             echo "Contraseña incorrecta. Inténtalo de nuevo.";
             
         }
-    } else {
-        echo "Usuario no encontrado. Regístrate si no tienes una cuenta.";
-        
-    }
-    
-}
 
-// Cerrar la conexión
+    
+    
+
+
+
 $conn->close();
 ?>

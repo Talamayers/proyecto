@@ -1,4 +1,6 @@
 <?php
+
+
 // Conexión a la base de datos (reemplaza con tus propios detalles)
 $servername = "localhost";
 $username = "root";
@@ -28,6 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Obtener datos del formulario
     $usuario = validarDatos($_POST["usuario"]);
     $contrasena = password_hash(validarDatos($_POST["password"]), PASSWORD_DEFAULT);
+    $rol = $_POST["rol"];
 
     // Verificar si el usuario ya existe
     $verificar_usuario = $conn->prepare("SELECT usuario FROM usuarios WHERE usuario = ?");
@@ -39,8 +42,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "El nombre de usuario ya está en uso. Por favor, elige otro.";
     } else {
         // Insertar datos en la tabla de usuarios usando consulta preparada
-        $stmt = $conn->prepare("INSERT INTO usuarios (usuario, contrasena,rol) VALUES (?, ?,1)");
-        $stmt->bind_param("ss", $usuario, $contrasena);
+        $stmt = $conn->prepare("INSERT INTO usuarios (usuario, contrasena,rol) VALUES (?, ?,?)");
+        $stmt->bind_param("ssi", $usuario, $contrasena, $rol);
 
         if ($stmt->execute()) {
             echo "Registro exitoso. ¡Ahora puedes iniciar sesión!";

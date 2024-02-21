@@ -22,7 +22,12 @@
                 <form id="loginform" action="../php/registro.php" method="post">
                     <input type="text" name="usuario" placeholder="Usuario" required>
                     <input type="password" placeholder="Contraseña" name="password" required>
+                    <select name="rol">
+                        <option value="1">Administrador</option>
+                        <option value="2">Usuario</option>
+                    </select>
                     <button type="submit" title="Registrar" name="Registrar">Registrar</button>
+
                 </form>
                 <div class="pie-form">
                     <a href="../html/login.html">¿Ya tienes cuenta? Inicia sesión</a>

@@ -160,11 +160,13 @@ border: 1px solid rgb(48, 47, 47);
   }
   
   .prev-btn {
+    width: 1em;
     left: 0;
   }
   
   .next-btn {
     right: 0;
+    width: 1em;
   }
 
   .ses2 {
@@ -263,6 +265,7 @@ display: flex;
   
 
   .form-register{
+    background-image: url(../imagenes/foto2.avif);
     width: 35%;
     background-color: #ffffff;
     padding: 30px;
@@ -422,10 +425,46 @@ section{
   color: #003366;
 text-align: center;
 }
-.LLAMAMOS{
-width: 100%;
-height: 500PX;
-display: flex;
-justify-content: center;
-bottom: 50px;
+.LLAMAMOS {
+  background-image: url(../imagenes/imagendefondo.webp);
+  width: 300px; /* Ajusta el ancho según sea necesario */
+  margin: 0 auto; /* Centra el div horizontalmente */
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+form {
+  text-align: center; /* Centra los elementos del formulario */
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="tel"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff; /* Color de fondo azul */
+  color: #fff; /* Color del texto blanco */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+}
+
+button:hover {
+  background-color: #0056b3; /* Color de fondo azul más oscuro al pasar el mouse */
 }
