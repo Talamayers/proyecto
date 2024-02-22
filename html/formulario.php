@@ -36,7 +36,7 @@
                 <li><a href="../html/pacientes.html">Gestionar Pacientes</a>
                 </li>
 
-                <li><a href="../html/agendar.html">Gestionar Citas</a>
+                <li><a href="../html/agendar.php">Gestionar Citas</a>
 
                 </li>
                 <li><a href="../html/personal.html">Gestionar personal</a>
@@ -49,6 +49,58 @@
             </ul>
         </div>
     </nav>
+    <?php
+
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "prueba1";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
+}
+
+$query = "SELECT * FROM pacientes";
+$result = mysqli_query($conn, $query);
+
+
+if (mysqli_num_rows($result) > 0) {
+
+    echo "<div class='container'>";
+    echo "<h1>Listado de Pacientes</h1>";
+    echo "<table class='pacientes'>";
+    echo "<tr><th>Nombre</th><th>Apellido</th><th>Cédula</th><th>Edad</th><th>Correo Electrónico</th></tr>";
+    
+    
+    
+   
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo "<tr>";
+       
+        echo "<td>".(isset($row['Nombre']) ? $row['Nombre'] : '')."</td>";
+        echo "<td>".(isset($row['Apellido']) ? $row['Apellido'] : '')."</td>";
+        echo "<td>".(isset($row['cedula']) ? $row['cedula'] : '')."</td>";
+        echo "<td>".(isset($row['edad']) ? $row['edad'] : '')."</td>";
+        echo "<td>".(isset($row['correo']) ? $row['correo'] : '')."</td>";
+        echo "<td><button class='button' data-id='".$row['ID_Paciente']."'>Ver</button></td>";
+        echo "</tr>";
+    }
+    
+    echo "</table>";
+    echo "</div>";
+} else {
+    echo "No se encontraron pacientes registrados.";
+}
+
+// Cerrar la conexión
+mysqli_close($conn);
+?>
+
+
     
 </body>
 </html>

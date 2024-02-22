@@ -129,3 +129,41 @@ color: rgba(255, 255, 255, 0.637);
 border: 1px solid rgb(48, 47, 47);
 
 }  
+.container {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.pacientes {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.pacientes th, .pacientes td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.pacientes th {
+  background-color: #f2f2f2;
+}
+
+.pacientes tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.pacientes tr:hover {
+  background-color: #ddd;
+}
+
+.ver-mas-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  cursor: pointer;
+}

@@ -34,6 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Ejecutar la consulta
     if ($stmt->execute()) {
         echo "Personal médico agregado correctamente.";
+        header("Location: ../html/formulario.php");
     } else {
         echo "Error al agregar personal médico: " . $stmt->error;
     }

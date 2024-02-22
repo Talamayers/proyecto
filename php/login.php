@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Usuario encontrado, verificar la contraseña
         $row = $result->fetch_assoc();
         if ($contrasena == $row["contrasena"]) {
-            header("Location: ../html/formulario.html");
+            header("Location: ../html/formulario.php");
             exit(); // Detener la ejecución del script después de la redirección
         }
     }

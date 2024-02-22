@@ -29,6 +29,7 @@ $stmt->bind_param("sssis", $nombre, $apellido, $cedula, $edad, $correo);
 
 if ($stmt->execute()) {
     echo "Paciente registrado correctamente";
+    header("Location: ../html/formulario.php");
 } else {
     echo "Error al registrar paciente: " . $conn->error;
 }
