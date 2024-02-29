@@ -43,9 +43,9 @@
 
                 </li>
                 <li><a href="">Gestionar ofertas y servicios</a></li>
-                <li><a href="">Rehabilitacion oral</a></li>
+                <li><a href="../php/citas.php">Citas Agendadas </a></li>
                 <li><a href="../php/logout.php">Cerrar sesión</a></li>
-
+                
             </ul>
         </div>
     </nav>
