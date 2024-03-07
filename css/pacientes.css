@@ -1,60 +1,80 @@
 /* styles.css */
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
 }
 
 .container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
     background-color: #fff;
-    border-radius: 8px;
+    border-radius: 10px;
+    padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 2px solid #ccc;
+    width: 400px;
+    margin: auto;
+    animation: fadeIn 0.5s ease forwards; /* Animación de entrada */
 }
 
-h1, h2, h3 {
-    color: #333;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-form {
-    margin-bottom: 20px;
+.container h1 {
+    margin-top: 0;
+    font-size: 24px;
+    text-align: center;
 }
 
-label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-input[type="text"],
-input[type="number"],
-input[type="email"] {
-    width: 100%;
-    padding: 10px;
+.container h2 {
+    font-size: 20px;
     margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
 }
 
-button {
-    padding: 10px 20px;
+.container form {
+    text-align: center;
+}
+
+.container form label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: left; /* Alineación de las etiquetas a la izquierda */
+}
+
+.container form input[type="text"],
+.container form input[type="number"],
+.container form input[type="email"],
+.container form button {
+    width: calc(100% - 20px);
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+    transition: all 0.3s ease; /* Transición suave para los elementos de entrada y botones */
+}
+
+.container form button {
+    width: auto;
     background-color: #007bff;
     color: #fff;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
 }
 
-button:hover {
+.container form button:hover {
     background-color: #0056b3;
 }
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-

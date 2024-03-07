@@ -1,41 +1,74 @@
-.container {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
 }
 
-h1 {
+.container {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 2px solid #ccc;
+    width: 400px;
+    margin: auto;
+    animation: fadeIn 0.5s ease forwards; /* Animación de entrada */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container h1 {
+    margin-top: 0;
+    font-size: 24px;
     text-align: center;
 }
 
-label {
+.container form {
+    text-align: center;
+}
+
+.container form label {
     display: block;
-    margin-bottom: 5px;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: left; /* Alineación de las etiquetas a la izquierda */
 }
 
-input[type="date"],
-input[type="time"],
-input[type="text"],
-select {
-    width: 100%;
+.container form input[type="date"],
+.container form input[type="time"],
+.container form select,
+.container form button {
+    width: calc(100% - 20px);
     padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
     border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
 }
 
-button {
-    width: 100%;
-    padding: 10px;
+.container form button {
+    width: auto;
     background-color: #007bff;
     color: #fff;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
 }
 
-button:hover {
+.container form button:hover {
     background-color: #0056b3;
 }
