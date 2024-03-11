@@ -1,6 +1,5 @@
 <?php
-// Aquí deberías conectar con tu base de datos y obtener el historial clínico de los pacientes
-// Por simplicidad, aquí simularemos algunos datos de historial clínico
+
 $historial_clinico = array(
     array("id" => 1, "nombre" => "Juan", "apellido" => "Pérez", "edad" => 35, "email" => "juan@example.com", "diagnostico" => "Caries"),
     array("id" => 2, "nombre" => "María", "apellido" => "Gómez", "edad" => 40, "email" => "maria@example.com", "diagnostico" => "Limpieza Dental")

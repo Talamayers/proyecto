@@ -25,10 +25,9 @@ function prevSlide() {
 prevBtn.addEventListener("click", prevSlide);
 nextBtn.addEventListener("click", nextSlide);
 
-// Función para avanzar automáticamente
 function autoSlide() {
   nextSlide();
 }
 
-// Iniciar el avance automático con setInterval
+
 setInterval(autoSlide, intervalTime);

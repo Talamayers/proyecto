@@ -52,7 +52,7 @@ if ($result->num_rows > 0) {
     echo "</table>";
     
 } else {
-    // Si no hay resultados, imprimes un mensaje indicando que no hay citas
+    // Si no hay resultados, imprime un mensaje indicando que no hay citas
     echo "No se encontraron citas.";
 }
 ?>
@@ -63,12 +63,12 @@ body {
 }
 
 table {
-    margin: 0 auto; /* Centra la tabla horizontalmente en la página */
+    margin: 0 auto;
     border-collapse: collapse;
-    width: 80%; /* Ancho de la tabla */
-    background-color: #fff; /* Color de fondo de la tabla */
-    border-radius: 10px; /* Borde redondeado de la tabla */
-    overflow: hidden; /* Oculta el contenido que se desborde */
+    width: 80%; 
+    background-color: #fff; 
+    border-radius: 10px; 
+    overflow: hidden; 
 }
 
 th, td {
@@ -77,12 +77,12 @@ th, td {
 }
 
 th {
-    background-color: #0056b3; /* Color de fondo del encabezado (azul oscuro) */
-    color: #fff; /* Color del texto del encabezado */
+    background-color: #0056b3; 
+    color: #fff; 
 }
 
 tr:nth-child(odd) {
-    background-color: #fff; /* Color de fondo de filas impares (blanco) */
+    background-color: #fff; 
 }
 
 
