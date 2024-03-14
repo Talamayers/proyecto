@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 }
 
 
-$sql = "SELECT c.ID_Cita, c.Fecha, c.Hora, c.Estado, CONCAT(CONCAT(p.Nombre, ' '), p.Apellido) AS Nombre_Paciente, CONCAT(CONCAT(pc.Nombre, ' '),pc.Apellido) AS Nombre_Personal FROM  citas c JOIN  pacientes p ON c.ID_Paciente = p.ID_Paciente JOIN  personal_clinica pc ON c.ID_Personal = pc.ID_Personal where c.Estado='Pendiente'";
+$sql = "SELECT c.ID_Cita, c.Fecha, c.Hora, c.ID_Paciente,c.Estado, CONCAT(CONCAT(p.Nombre, ' '), p.Apellido) AS Nombre_Paciente, CONCAT(CONCAT(pc.Nombre, ' '),pc.Apellido) AS Nombre_Personal FROM  citas c JOIN  pacientes p ON c.ID_Paciente = p.ID_Paciente JOIN  personal_clinica pc ON c.ID_Personal = pc.ID_Personal where c.Estado='Pendiente'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -24,6 +24,7 @@ if ($result->num_rows > 0) {
                 <th>Hora</th>
                 <th>Medico</th>
                 <th>Paciente</th>
+                <th>Descripcion</th>
                 <th>Estado</th>
             </tr>";
 
@@ -35,7 +36,10 @@ if ($result->num_rows > 0) {
         echo "<td>" . $row["Nombre_Personal"] . "</td>";
         echo "<td>" . $row["Nombre_Paciente"] . "</td>";
         echo "<form action='confirmar.php' method='post'>";
+        echo "<td><input type='text' name='descripcion'></td>";
         echo "<input type='hidden' name='id_cita' value='" . $row["ID_Cita"] . "'>";
+        echo "<input type='hidden' name='ID_Paciente' value='" . $row["ID_Paciente"] . "'>";
+        echo "<input type='hidden' name='Fecha' value='" . $row["Fecha"] . "'>";
         echo "<td>
         <select name='accion'>
         <option value='confirmar'>Confirmar</option>
@@ -44,7 +48,6 @@ if ($result->num_rows > 0) {
         <button type='submit'>Enviar</button>
         </td>";
         echo "</form>";
-        echo "</td>";
         echo "</tr>";
     }
 

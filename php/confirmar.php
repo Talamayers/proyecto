@@ -1,29 +1,50 @@
 <?php
 
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
    
     if (isset($_POST["id_cita"]) && isset($_POST["accion"])) {
         
         $id_cita = $_POST["id_cita"];
         $accion = $_POST["accion"];
-
+        $ID_Paciente = $_POST["ID_Paciente"];
         
+        $Fecha = $_POST["Fecha"];
+
+
+        $descripcion = $_POST["descripcion"];
+
+                 
         $servername = "localhost";
         $username = "root";
         $password = "";
         $dbname = "prueba1";
 
-        $conn = new mysqli($servername, $username, $password, $dbname);
 
-        
-        if ($conn->connect_error) {
-            die("Conexión fallida: " . $conn->connect_error);
-        }
+        $conexion = mysqli_connect($servername, $username, $password, $dbname) or
+        die("Problemas con la conexión");
 
-        
+        $conn = mysqli_connect($servername, $username, $password, $dbname) or
+        die("Problemas con la conexión");
+
+              
         if ($accion == "confirmar") {
+
+            mysqli_query($conexion, "INSERT INTO historiales_clinicos(ID_Paciente,Fecha_creacion,Descripcion) VALUES 
+            ('$_REQUEST[ID_Paciente]','$_REQUEST[Fecha]','$_REQUEST[descripcion]')")
+            or die("Problemas en el select" . mysqli_error($conexion));
+
+            mysqli_close($conexion);
+            echo "La cita con ID $id_cita Se registro.";
             
-            echo "La cita con ID $id_cita ha sido confirmada.";
+    
+
+
+
+
+
+            
+           
         } elseif ($accion == "cancelar") {
             
             echo "La cita con ID $id_cita ha sido cancelada.";
@@ -43,6 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         
         echo "Error: Falta información en el formulario.";
+        echo "id cita es: "+ $id_cita+"accion es: "+ $accion;
     }
 } else {
     
